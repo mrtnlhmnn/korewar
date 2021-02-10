@@ -1,4 +1,5 @@
-/target/
 /.idea/
-korewar.iml
-/korewar-core/target/
+/target/
+/**/target/
+*.iml
+/**/*.iml

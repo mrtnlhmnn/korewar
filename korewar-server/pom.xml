@@ -2,27 +2,14 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>korewar</artifactId>
+        <groupId>korewar</groupId>
+        <version>0.1-SNAPSHOT</version>
+    </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>korewar</groupId>
-    <artifactId>korewar</artifactId>
-    <packaging>pom</packaging>
-    <version>0.1-SNAPSHOT</version>
-    <modules>
-        <module>korewar-admin</module>
-        <module>korewar-arena</module>
-        <module>korewar-core</module>
-        <module>korewar-dashboard</module>
-        <module>korewar-editor</module>
-        <module>korewar-enemy-ai</module>
-        <module>korewar-enemy-ga</module>
-        <module>korewar-language</module>
-        <module>korewar-security</module>
-        <module>korewar-server</module>
-        <module>korewar-ui-arena-viewer</module>
-        <module>korewar-ui-admin</module>
-        <module>korewar-ui-dashboard</module>
-    </modules>
+    <artifactId>korewar-server</artifactId>
 
     <properties>
         <maven.compiler.source>15</maven.compiler.source>
@@ -45,6 +32,7 @@
     </dependencies>
 
     <build>
+        <sourceDirectory>src/main/kotlin</sourceDirectory>
         <plugins>
             <plugin>
                 <groupId>org.jetbrains.kotlin</groupId>
@@ -67,7 +55,7 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <jvmTarget>1.8</jvmTarget>
+                    <jvmTarget>15</jvmTarget>
                 </configuration>
             </plugin>
         </plugins>
