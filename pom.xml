@@ -11,17 +11,17 @@
     <modules>
         <module>korewar-admin</module>
         <module>korewar-arena</module>
-        <module>korewar-core</module>
+        <module>korewar-common</module>
         <module>korewar-dashboard</module>
-        <module>korewar-editor</module>
         <module>korewar-enemy-ai</module>
         <module>korewar-enemy-ga</module>
-        <module>korewar-language</module>
+        <module>korewar-redcode-interpreter</module>
         <module>korewar-security</module>
         <module>korewar-server</module>
-        <module>korewar-ui-arena-viewer</module>
         <module>korewar-ui-admin</module>
+        <module>korewar-ui-arena-viewer</module>
         <module>korewar-ui-dashboard</module>
+        <module>korewar-ui-editor</module>
     </modules>
 
     <properties>
@@ -106,12 +106,22 @@
         </dependency>
     </dependencies>
 
+
     <build>
+        <sourceDirectory>${project.basedir}/src/main/kotlin</sourceDirectory>
+        <testSourceDirectory>${project.basedir}/src/test/kotlin</testSourceDirectory>
+
+        <defaultGoal>clean verify</defaultGoal>
+
         <plugins>
             <plugin>
                 <groupId>org.jetbrains.kotlin</groupId>
                 <artifactId>kotlin-maven-plugin</artifactId>
                 <version>${kotlin.version}</version>
+                <configuration>
+                    <jvmTarget>${maven.compiler.target}</jvmTarget>
+                </configuration>
+
                 <executions>
                     <execution>
                         <id>compile</id>
@@ -119,6 +129,11 @@
                         <goals>
                             <goal>compile</goal>
                         </goals>
+                        <configuration>
+                            <sourceDirs>
+                                <source>src/main/kotlin</source>
+                            </sourceDirs>
+                        </configuration>
                     </execution>
                     <execution>
                         <id>test-compile</id>
@@ -128,9 +143,20 @@
                         </goals>
                     </execution>
                 </executions>
-                <configuration>
-                    <jvmTarget>1.8</jvmTarget>
-                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>3.2.1</version>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>

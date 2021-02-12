@@ -1,0 +1,37 @@
+Korewar TODOs and Backlog
+---------------------------------------------------------------------------------------------------------------------
+
+Functionality
+[ ] Create arena server, web access, viewer of current arena
+[ ] Create dashboard for long-term statistics
+[ ] Create user management, login, a&a
+[ ] Create Redcode editor plugin for IntelliJ
+[ ] Create Admin environment, web access
+[ ] Create central (or distributed?) database
+[ ] Create Genetic algorithm to create virtual enemies
+[ ] Create Neural Network to create virtual enemies
+[ ] Create Redcode language interpreter, based on parser
+
+Infrastructure
+[x] Run X server, access from WSL2 and get IntelliJ running on WSL2
+[x] Integrate tests to build
+[ ] Migrate to Gradle (or Quarkus first)?
+[ ] Allow copy-paste between host and WSL guest
+
+Technology
+[ ] Decide programming language -> Kotlin it is, hence Intellij it is
+[x] Decide whether to use SpringBoot or Quarkus -> Quarkus because of "why not" and runs natively on Graal
+[x] Decide whether to use JDK 11 or JDK 15 -> JDK11 as 15 has problems with Kotlin on IntelliJ (Linux only, why?)
+[x] Decide whether to use Maven or Gradle -> Gradle because "why not"
+[ ] Get it all running on Docker
+[ ] Get it all running on AWS
+[ ] Get it all running on Graal
+[ ] Decide which persistence technology to use
+[ ] Decide which parser technology to use
+[ ] Use testcontainers for regression test suite
+
+Design
+[ ]
+
+Misc
+[ ] get domain korewar.io
